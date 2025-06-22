@@ -29,7 +29,9 @@ jobs:
       - name: Run a one-line script
         run: echo Hello, world!
       - name: saving file from github variable
-        run: echo "${{ secrets.GOOGLE_KEYS_JSON }}" > /_work/shubnit12.github.io/shubnit12.github.io/private/personalwebsiteKeys.json
+        run: |
+          mkdir -p /runner/_work/shubnit12.github.io/shubnit12.github.io/private
+          echo "${{ secrets.GOOGLE_KEYS_JSON }}" > /runner/_work/shubnit12.github.io/shubnit12.github.io/private/personalwebsiteKeys.json
 
       # Runs a set of commands using the runners shell
       - name: Run a multi-line script
