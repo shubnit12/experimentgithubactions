@@ -31,6 +31,7 @@ jobs:
       - name: saving file from github variable
         run: |
           mkdir -p /runner/_work/shubnit12.github.io/shubnit12.github.io/private
+          echo "${{ secrets.MYSECRET }}"
           echo "${{ secrets.MYSECRET }}" > /runner/_work/shubnit12.github.io/shubnit12.github.io/private/personalwebsiteKeys.json
 
       # Runs a set of commands using the runners shell
